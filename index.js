@@ -17,9 +17,9 @@ server.listen(PORT, () => {
 function createBot() {
     const bot = mineflayer.createBot({
         host: 'mohipetni.aternos.me', // Your Aternos IP (exclude the port)
-        port: '57543',                // Your Aternos Port number
+        port: 57543,                // Your Aternos Port number
         username: 'AFK_Bot',        // Name of the bot in-game
-        version: false              // Auto-detects Minecraft version
+        version: 26.1.2              // Auto-detects Minecraft version
     });
 
     bot.on('spawn', () => {
