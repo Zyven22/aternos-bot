@@ -12,17 +12,21 @@ server.listen(PORT, () => {
 });
 
 function createBot() {
+    console.log("Attempting to connect bot to Aternos...");
+    
     const bot = mineflayer.createBot({
-        host: 'mohipetni.aternos.me', 
-        
-        port: 57543,                  
-        
+        host: 'mohipetni.aternos.me',
+        port: 57543,
         username: 'AFK_Bot',        
-        version: "1.20.4"              
+        version: '1.20.4'           
     });
 
     bot.on('spawn', () => {
-        console.log('Bot joined the server!');
+        console.log('SUCCESS: Bot joined the server successfully!');
+    });
+
+    bot.on('kicked', (reason) => {
+        console.log('KICKED BY SERVER. Reason:', reason);
     });
 
     bot.on('end', () => {
@@ -31,8 +35,6 @@ function createBot() {
     });
 
     bot.on('error', (err) => {
-        console.log('Mineflayer Error encountered:', err.message);
+        console.log('CRITICAL ERROR:', err.message);
     });
 }
-
-createBot();
