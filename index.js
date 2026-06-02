@@ -18,7 +18,7 @@ function createBot() {
         port: 57543,                  
         
         username: 'AFK_Bot',        
-        version: "1.26.1"              
+        version: "1.20.4"              
     });
 
     bot.on('spawn', () => {
